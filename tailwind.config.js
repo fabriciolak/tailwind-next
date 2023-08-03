@@ -1,13 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/**/*.tsx',
-  ],
+  content: ['./src/**/*.tsx'],
   theme: {
     extend: {
-      colors: {
-        fabricio: '#333'
-      }
+      gridTemplateColumns: {
+        app: 'minmax(288px, 20rem) 1fr',
+      },
     },
   },
   plugins: [],
