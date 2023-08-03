@@ -12,6 +12,7 @@ import {
 import { Logo } from './logo'
 import { NavItem } from './Navigation/NavItem'
 import { UsedSpaceWidget } from './UsedSpaceWidget'
+import { Profile } from './Profile'
 
 export function Sidebar() {
   return (
@@ -39,11 +40,15 @@ export function Sidebar() {
       <div className="mt-auto flex flex-col gap-6">
         <nav className=" space-y-0.5 ">
           <NavItem href="/" title="Support" icon={LifeBuoy} />
-          <NavItem href="/" title="Support" icon={Settings} />
+          <NavItem href="/" title="Settings" icon={Settings} />
         </nav>
 
         <UsedSpaceWidget />
       </div>
+
+      <div className="h-px bg-zinc-200"></div>
+
+      <Profile />
     </aside>
   )
 }
