@@ -1,3 +1,4 @@
+import { Navigation } from './Navigation'
 import { Logo } from './logo'
 import { Search } from 'lucide-react'
 
@@ -6,13 +7,16 @@ export function Sidebar() {
     <aside className="space-y-6 border-r border-zinc-200 px-5 py-8">
       <Logo />
 
-      <div className="flex h-11 w-full items-center gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm">
+      <div className="mx-1 flex h-11  items-center gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm">
         <Search className="h-5 w-5" />
+
         <input
-          className="h-full flex-1 border-0 bg-transparent p-0 text-zinc-900 outline-0 placeholder:text-zinc-600"
+          className="h-full w-full border-0 bg-transparent p-0 text-zinc-900 outline-0 placeholder:text-zinc-600"
           placeholder="search"
         />
       </div>
+
+      <Navigation />
     </aside>
   )
 }
