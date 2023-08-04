@@ -10,38 +10,38 @@ import {
   Search,
 } from 'lucide-react'
 import { Logo } from './logo'
-import { NavItem } from './Navigation/NavItem'
 import { UsedSpaceWidget } from './UsedSpaceWidget'
 import { Profile } from './Profile'
-import { InputControl, InputPrefix, InputRoot } from '../Input'
+import * as Input from '../Input'
+import * as Navigation from './Navigation'
 
 export function Sidebar() {
   return (
     <aside className="flex flex-col gap-6 border-r border-zinc-200 px-5 py-8">
       <Logo />
 
-      <InputRoot>
-        <InputPrefix>
+      <Input.Root>
+        <Input.Prefix>
           <Search />
-        </InputPrefix>
+        </Input.Prefix>
 
-        <InputControl />
-      </InputRoot>
+        <Input.Control />
+      </Input.Root>
 
-      <nav className=" space-y-0.5 ">
-        <NavItem href="/" title="Home" icon={Home} />
-        <NavItem title="Dashboard" icon={BarChart} />
-        <NavItem title="Projects" icon={Layers} />
-        <NavItem title="Tasks" icon={CheckSquare} />
-        <NavItem title="Reporting" icon={Flag} />
-        <NavItem title="Users" icon={Users} />
-      </nav>
+      <Navigation.Root>
+        <Navigation.Item href="/" title="Home" icon={Home} />
+        <Navigation.Item title="Dashboard" icon={BarChart} />
+        <Navigation.Item title="Projects" icon={Layers} />
+        <Navigation.Item title="Tasks" icon={CheckSquare} />
+        <Navigation.Item title="Reporting" icon={Flag} />
+        <Navigation.Item title="Users" icon={Users} />
+      </Navigation.Root>
 
       <div className="mt-auto flex flex-col gap-6">
-        <nav className=" space-y-0.5 ">
-          <NavItem href="/" title="Support" icon={LifeBuoy} />
-          <NavItem href="/" title="Settings" icon={Settings} />
-        </nav>
+        <Navigation.Root>
+          <Navigation.Item href="/" title="Support" icon={LifeBuoy} />
+          <Navigation.Item href="/" title="Settings" icon={Settings} />
+        </Navigation.Root>
 
         <UsedSpaceWidget />
       </div>

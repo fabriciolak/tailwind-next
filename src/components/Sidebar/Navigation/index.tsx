@@ -1,12 +1,28 @@
+import * as React from 'react'
 import { ChevronDown } from 'lucide-react'
-import { AnchorHTMLAttributes } from 'react'
 
-interface NavItemProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+type NavigationRootProps = React.ComponentProps<'nav'>
+
+export function Root(props: NavigationRootProps) {
+  return (
+    <nav className=" space-y-0.5" {...props}>
+      {props.children}
+    </nav>
+  )
+}
+
+interface NavigationItemProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   title: string
   icon: React.ElementType
 }
 
-export function NavItem({ title, icon: Icon, href, ...props }: NavItemProps) {
+export function Item({
+  title,
+  href,
+  icon: Icon,
+  ...props
+}: NavigationItemProps) {
   return (
     <a
       href={href}
