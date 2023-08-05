@@ -3,7 +3,7 @@
 import * as React from 'react'
 import * as Tabs from '@/components/Tabs'
 import * as Input from '@/components/Input'
-import { Mail } from 'lucide-react'
+import { Mail, UploadCloud, User } from 'lucide-react'
 
 export default function Home() {
   const [currentTab, setCurrentTab] = React.useState<string>('my-details')
@@ -87,6 +87,7 @@ export default function Home() {
           id="settings-form"
           className="mt-6 flex w-full flex-col gap-5 divide-y-2 divide-zinc-200"
         >
+          {/* Name */}
           <div className="grid grid-cols-form gap-3">
             <label
               htmlFor="firstName"
@@ -106,6 +107,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Email Address */}
           <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="emailAddress"
@@ -126,6 +128,7 @@ export default function Home() {
             </Input.Root>
           </div>
 
+          {/* Your Photo */}
           <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="yourPhoto"
@@ -137,9 +140,36 @@ export default function Home() {
               </span>
             </label>
 
-            <div></div>
+            <div className="flex items-start gap-5">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-violet-50">
+                <User className="h-8 w-8 text-violet-500" />
+              </div>
+
+              <label
+                htmlFor="uploadPhoto"
+                className="group flex flex-1 cursor-pointer flex-col items-center gap-3 rounded-lg border border-zinc-300 px-6 py-4 text-center text-zinc-500 shadow-sm hover:border-violet-200 hover:bg-violet-25 hover:text-violet-500"
+              >
+                <div className="rounded-full border-6 border-zinc-50 bg-zinc-100 p-2 group-hover:border-violet-50 group-hover:bg-violet-100">
+                  <UploadCloud className="h-5 w-5 text-zinc-500 group-hover:text-violet-700" />
+                </div>
+
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-sm">
+                    <span className="font-semibold text-violet-700">
+                      Click to upload{' '}
+                    </span>
+                    or drag and drop
+                  </span>
+                  <span className="text-xs">
+                    SVG, PNG, JPG or GIF (max. 800x400px)
+                  </span>
+                </div>
+              </label>
+              <input type="file" id="uploadPhoto" className="sr-only" />
+            </div>
           </div>
 
+          {/* Role */}
           <div className="grid grid-cols-form gap-3 pt-5">
             <label htmlFor="role" className="text-sm font-medium text-zinc-700">
               Role
@@ -150,6 +180,7 @@ export default function Home() {
             </Input.Root>
           </div>
 
+          {/* Country */}
           <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="country"
@@ -161,6 +192,7 @@ export default function Home() {
             <div></div>
           </div>
 
+          {/* Timezone */}
           <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="timezone"
@@ -172,6 +204,7 @@ export default function Home() {
             <div></div>
           </div>
 
+          {/* Bio */}
           <div className="grid grid-cols-form gap-3 pt-5">
             <label htmlFor="bio" className="text-sm font-medium text-zinc-700">
               Bio
@@ -183,6 +216,7 @@ export default function Home() {
             <div></div>
           </div>
 
+          {/* Portfolio projects */}
           <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="portfolioProjects"
@@ -197,6 +231,7 @@ export default function Home() {
             <div></div>
           </div>
 
+          {/* Buttons */}
           <div className="flex items-center justify-end gap-2 pt-5">
             <button
               type="button"
