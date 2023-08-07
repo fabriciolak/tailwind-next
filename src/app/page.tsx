@@ -4,6 +4,7 @@ import * as React from 'react'
 import * as Tabs from '@/components/Tabs'
 import * as Input from '@/components/Input'
 import * as Upload from '@/components/Form/Upload'
+import { Select } from '@/components/Form/Select'
 import { Mail } from 'lucide-react'
 
 export default function Home() {
@@ -170,7 +171,7 @@ export default function Home() {
               Country
             </label>
 
-            <div></div>
+            <Select />
           </div>
 
           {/* Timezone */}
