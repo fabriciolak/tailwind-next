@@ -201,7 +201,7 @@ export default function Home() {
           <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="portfolioProjects"
-              className="text-sm font-medium text-zinc-700"
+              className="flex flex-col text-sm font-medium text-zinc-700"
             >
               Portfolio projects
               <span className="mt-0.5 block text-sm font-normal text-zinc-500">
@@ -209,9 +209,10 @@ export default function Home() {
               </span>
             </label>
 
-            <Upload.Root className="flex items-start gap-5">
+            <Upload.Root>
               <Upload.Trigger />
-              <Upload.Control />
+              <Upload.FileList />
+              <Upload.Control multiple />
             </Upload.Root>
           </div>
 
