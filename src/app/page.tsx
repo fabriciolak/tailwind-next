@@ -5,7 +5,9 @@ import * as Tabs from '@/components/Tabs'
 import * as Input from '@/components/Input'
 import * as Upload from '@/components/Form/Upload'
 import { Select } from '@/components/Form/Select'
-import { Mail } from 'lucide-react'
+import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
+import { SelectItem } from '@/components/Form/Select/SelectItem'
+import { Textarea } from '@/components/Form/Textarea'
 
 export default function Home() {
   const [currentTab, setCurrentTab] = React.useState<string>('my-details')
@@ -171,7 +173,12 @@ export default function Home() {
               Country
             </label>
 
-            <Select />
+            <Select defaultValue="br" placeholder="Select a country">
+              <SelectItem value="br" text="Brazil" />
+              <SelectItem value="us" text="United States" />
+              <SelectItem value="in" text="India" />
+              <SelectItem value="de" text="Germany" />
+            </Select>
           </div>
 
           {/* Timezone */}
@@ -183,7 +190,21 @@ export default function Home() {
               Timezone
             </label>
 
-            <div></div>
+            <Select defaultValue="br-brt" placeholder="Select a timezone">
+              <SelectItem value="br-brt" text="Brasília Time (BRT) UTC -3" />
+              <SelectItem
+                value="us-est"
+                text="Eastern standard time (EST) UTC-05:00"
+              />
+              <SelectItem
+                value="in-ist"
+                text="India Standard Time (IST) UTC+5:30"
+              />
+              <SelectItem
+                value="ge-cest"
+                text="Central European Summer Time (CEST) UTC +2"
+              />
+            </Select>
           </div>
 
           {/* Bio */}
@@ -195,7 +216,55 @@ export default function Home() {
               </span>
             </label>
 
-            <div></div>
+            <div className="space-y-3">
+              <div className="grid grid-cols-2 gap-3 ">
+                <Select defaultValue="normal" placeholder="">
+                  <SelectItem value="normal" text="Normal text" />
+                  <SelectItem value="md" text="Markdown" />
+                </Select>
+
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    className="p2 rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <Bold className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  </button>
+                  <button
+                    type="button"
+                    className="p2 rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <Italic className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  </button>
+                  <button
+                    type="button"
+                    className="p2 rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <Link className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  </button>
+                  <button
+                    type="button"
+                    className="p2 rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <List className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  </button>
+                  <button
+                    type="button"
+                    className="p2 rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <ListOrdered
+                      className="h-4 w-4 text-zinc-500"
+                      strokeWidth={3}
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <Textarea
+                id="bio "
+                defaultValue="I'm a Product Designer based in Melbourne, Australia. I specialise in UX/UI design, brand strategy, and Webflow development."
+              />
+            </div>
           </div>
 
           {/* Portfolio projects */}
