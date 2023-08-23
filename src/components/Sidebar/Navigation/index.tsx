@@ -26,7 +26,7 @@ export function Item({
   return (
     <a
       href={href}
-      className="py2 hover group flex items-center gap-3 rounded px-3 py-2 hover:bg-violet-50"
+      className="group flex items-center gap-3 rounded px-3 py-2 outline-none hover:bg-violet-50"
       {...props}
     >
       <Icon className="h-5 w-5 text-zinc-500" />
