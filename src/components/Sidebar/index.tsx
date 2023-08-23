@@ -18,6 +18,7 @@ import { Profile } from './Profile'
 import * as Input from '../Input'
 import * as Navigation from './Navigation'
 import * as Collapsible from '@radix-ui/react-collapsible'
+
 import { Button } from '../Button'
 
 export function Sidebar() {

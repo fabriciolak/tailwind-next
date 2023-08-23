@@ -1,66 +1,22 @@
-'use client'
-
 import * as React from 'react'
-import * as Tabs from '@/components/Tabs'
+
+import { SettingsTabs } from './SettingsTabs'
+
 import * as Input from '@/components/Input'
 import * as Upload from '@/components/Form/Upload'
 import { Select } from '@/components/Form/Select'
-import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
 import { SelectItem } from '@/components/Form/Select/SelectItem'
 import { Textarea } from '@/components/Form/Textarea'
 import { Button } from '@/components/Button'
 
-export default function Home() {
-  const [currentTab, setCurrentTab] = React.useState<string>('my-details')
+import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
 
+export default function Home() {
   return (
     <>
       <h1 className="text-3xl font-medium text-zinc-900">Settings</h1>
 
-      <Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
-        <Tabs.Item
-          value="my-details"
-          title="My Details"
-          isSelected={currentTab === 'my-details'}
-        />
-        <Tabs.Item
-          value="profile"
-          title="Profile"
-          isSelected={currentTab === 'profile'}
-        />
-        <Tabs.Item
-          value="password"
-          title="Password"
-          isSelected={currentTab === 'password'}
-        />
-        <Tabs.Item value="eam" title="Team" isSelected={currentTab === 'eam'} />
-        <Tabs.Item
-          value="plan"
-          title="Plan"
-          isSelected={currentTab === 'plan'}
-        />
-        <Tabs.Item
-          value="billing"
-          title="Billing"
-          isSelected={currentTab === 'billing'}
-        />
-        <Tabs.Item
-          value="email"
-          title="Email"
-          isSelected={currentTab === 'email'}
-        />
-        <Tabs.Item
-          value="notifications"
-          title="Notifications"
-          isSelected={currentTab === 'notifications'}
-        />
-        <Tabs.Item
-          value="integrations"
-          title="Integrations"
-          isSelected={currentTab === 'integrations'}
-        />
-        <Tabs.Item value="api" title="API" isSelected={currentTab === 'api'} />
-      </Tabs.Root>
+      <SettingsTabs />
 
       <div className="mt-6 flex flex-col">
         <div className="flex items-center justify-between border-b border-zinc-200 pb-5">

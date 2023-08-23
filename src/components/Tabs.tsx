@@ -15,7 +15,7 @@ export function Item({ value, title, isSelected = false }: ItemProps) {
       value={value}
       className="group relative px-1 pb-4 text-sm font-medium text-zinc-500 outline-none hover:text-violet-700 data-[state='active']:text-violet-700"
     >
-      <span className="rounded group-focus-visible:ring group-focus-visible:ring-violet-400 group-focus-visible:ring-offset-4">
+      <span className="whitespace-nowrap rounded group-focus-visible:ring group-focus-visible:ring-violet-400 group-focus-visible:ring-offset-4">
         {title}
       </span>
 
@@ -32,11 +32,5 @@ export function Item({ value, title, isSelected = false }: ItemProps) {
 type RootProps = React.RefAttributes<HTMLDivElement> & RadixTabs.TabsProps
 
 export function Root({ ...props }: RootProps) {
-  return (
-    <RadixTabs.Root {...props}>
-      <RadixTabs.List className="mt-6 flex w-full items-center gap-4 border-b border-zinc-200">
-        {props.children}
-      </RadixTabs.List>
-    </RadixTabs.Root>
-  )
+  return <RadixTabs.Root {...props}>{props.children}</RadixTabs.Root>
 }
