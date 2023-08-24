@@ -14,10 +14,10 @@ export function Profile() {
       />
 
       <div className="flex flex-col truncate">
-        <span className="truncate text-sm font-semibold text-zinc-700">
+        <span className="truncate text-sm font-semibold text-zinc-700 dark:text-zinc-100">
           Fabrício Silva
         </span>
-        <span className="truncate text-sm text-zinc-500">
+        <span className="truncate text-sm text-zinc-500 dark:text-zinc-400">
           fabriciolak12@gmail.com
         </span>
       </div>

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { ChevronDown } from 'lucide-react'
+import { tw } from '@/utils'
 
 type NavigationRootProps = React.ComponentProps<'nav'>
 
@@ -26,14 +27,17 @@ export function Item({
   return (
     <a
       href={href}
-      className="group flex items-center gap-3 rounded px-3 py-2 outline-none hover:bg-violet-50"
+      className={tw(
+        'group flex items-center gap-3 rounded px-3 py-2 outline-none hover:bg-violet-50',
+        'dark:hover:bg-zinc-800',
+      )}
       {...props}
     >
       <Icon className="h-5 w-5 text-zinc-500" />
-      <span className="font-medium text-zinc-700 group-hover:text-violet-700">
+      <span className="font-medium text-zinc-700 group-hover:text-violet-700 dark:text-zinc-100 dark:group-hover:text-violet-300">
         {title}
       </span>
-      <ChevronDown className="ml-auto h-5 w-5 text-zinc-400 group-hover:text-violet-400" />
+      <ChevronDown className="ml-auto h-5 w-5 text-zinc-400 group-hover:text-violet-400 dark:text-zinc-600" />
     </a>
   )
 }

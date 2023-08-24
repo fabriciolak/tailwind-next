@@ -1,5 +1,5 @@
 import { Button } from '@/components/Button'
-import { formatBytes } from '@/utilts/format-byes'
+import { formatBytes } from '@/utils/format-byes'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { CheckCircle, CheckCircle2, Trash2, UploadCloud } from 'lucide-react'
 
